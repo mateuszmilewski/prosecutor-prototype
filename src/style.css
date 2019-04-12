@@ -1,0 +1,193 @@
+@font-face {
+    font-family: pfont;
+    src: url("fonts/palanquin-bold.ttf");
+}
+
+
+html {
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-shadow: 0px;
+    box-shadow: 0px;
+}
+
+body {
+    font-family: pfont, Roboto, sans-serif;
+    background-color: #141414;
+    color: white;
+}
+
+
+@media (min-width: 1201px) {
+    nav {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: .5s;
+        transition: .5s;
+    }
+
+
+
+    nav.some-opacity {
+        opacity: 0.4;
+        height: 100px;
+        padding: 10px;
+    }
+
+
+
+    #nav-logo {
+        display: block;
+        height: 90px;
+        padding: 6px;
+        -webkit-transition: .5s;
+        transition: .5s;
+    }
+
+
+    nav ul {
+        list-style: none;
+        float: right;
+        margin: 0px;
+        padding: 0px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    nav ul li a {
+        line-height: 0px;
+        color: white;
+        padding: 2px 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-transition: .5s;
+        transition: .5s;
+
+    }
+
+    nav.some-opacity ul li a {
+        opacity: 0.4;
+        color: dimgray;
+    }
+
+
+
+
+    nav ul li a:focus {
+        outline: none;
+    }
+
+
+    nav ul li a:hover {
+        outline: none;
+        color: lightgray;
+    }
+}
+
+@media (max-width: 1200px) {
+    nav {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 20px;
+        font-size: 70%;
+        padding: 2px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: .5s;
+        transition: .5s;
+    }
+
+    nav.some-opacity {
+        opacity: 0.4;
+        height: 20px;
+        padding: 2px;
+    }
+
+
+
+    #nav-logo {
+        display: block;
+        height: 60px;
+        padding: 1px;
+        -webkit-transition: .5s;
+        transition: .5s;
+    }
+
+
+    nav ul {
+        list-style: none;
+        float: right;
+        margin: 0px;
+        padding: 0px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    nav ul li a {
+        line-height: 0px;
+        color: white;
+        padding: 1px 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-transition: .5s;
+        transition: .5s;
+
+    }
+
+    nav.some-opacity ul li a {
+        opacity: 0.4;
+        color: dimgray;
+    }
+
+
+
+
+    nav ul li a:focus {
+        outline: none;
+    }
+
+
+    nav ul li a:hover {
+        outline: none;
+        color: lightgray;
+    }
+}
+
+
+@media (max-width: 650px) {
+    nav {
+        visibility: hidden;
+    }
+}
+
+
+
+
+
+section {
+    height: 100vh;
+    background-color: #141414;
+    padding-top: 170px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
