@@ -15,7 +15,35 @@ body {
     font-family: pfont, Roboto, sans-serif;
     background-color: #141414;
     color: white;
+    width: 90%;
 }
+
+
+#nm {
+    font-size: 3em;
+    display: inline-block;
+    position: absolute;
+    left: 100px;
+    top: 20px;
+
+}
+
+
+
+
+nav {
+
+    background: #141414;
+    background: -webkit-gradient(linear, left top, left bottom, from(#141414), color-stop(24%, #141414), to(#400000));
+    background: linear-gradient(to bottom, #141414 0%, #141414 24%, #400000 100%);
+    opacity: .95;
+    -webkit-box-shadow: 0px 0px 120px 40px #400000;
+    box-shadow: 0px 0px 120px 40px #400000;
+    z-index: 111;
+
+}
+
+
 
 
 @media (min-width: 1201px) {
@@ -38,6 +66,7 @@ body {
         opacity: 0.4;
         height: 100px;
         padding: 10px;
+
     }
 
 
@@ -94,6 +123,19 @@ body {
         outline: none;
         color: lightgray;
     }
+
+    nav #nav-logo {
+        border-radius: 10px;
+        opacity: 0.6;
+    }
+
+
+
+
+
+
+
+
 }
 
 @media (max-width: 1200px) {
@@ -102,7 +144,7 @@ body {
         top: 0px;
         left: 0px;
         width: 100%;
-        height: 20px;
+        height: 100px;
         font-size: 70%;
         padding: 2px;
         -webkit-box-sizing: border-box;
@@ -185,9 +227,47 @@ body {
 
 
 section {
-    height: 100vh;
     background-color: #141414;
     padding-top: 170px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.news {
+    z-index: 100;
+}
+
+.news .item-info {
+    padding: 2em;
+    border-radius: 17px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 14px;
+}
+
+.news .item-info img {
+    width: 70vw;
+    border-radius: 27px;
+    padding: 2px;
+    -webkit-box-shadow: inset 10px -47px 116px 17px rgba(207, 39, 39, 1);
+    box-shadow: inset 10px -47px 116px 17px rgba(207, 39, 39, 1);
+
+}
+
+.news ul {
+    list-style: none;
+}
+
+.shop ul {
+    list-style: none;
+}
+
+#nav-logo-name {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    height: 90px;
+    border-radius: 8px;
+    opacity: 1.0;
+    z-index: 200;
 }

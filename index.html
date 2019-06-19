@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl" ng-app="ProsecutorApp">
 
 <head>
     <meta charset="UTF-8">
@@ -22,14 +22,18 @@
 
     <div class="wrapper">
         <!-- <h1>PROSECUTOR</h1> -->
+        <img src="src/img/logo/logo-napis.JPG" id="nav-logo-name">
         <nav class="logo">
-            <img src="src/img/sm-logo.JPG" alt="logo" id="nav-logo">
+            <!--<img src="src/img/sm-logo.JPG" alt="logo" id="nav-logo">-->
+            <!-- <span class="nm" id="nm">PROSECUTOR</span> -->
+            <img src="src/img/logo/logo-napis.JPG" id="nav-logo-name">
+
 
             <ul class="menu">
-                <li class="menu-item"><a href="#home">Strona główna</a></li>
                 <li class="menu-item"><a href="#news">Aktualności</a></li>
                 <li class="menu-item"><a href="#koncerty">Koncerty</a></li>
                 <li class="menu-item"><a href="#history">Historia zespołu</a></li>
+                <li class="menu-item"><a href="#sklad">Skład zespołu</a></li>
                 <li class="menu-item"><a href="#galery">Galeria</a></li>
                 <li class="menu-item"><a href="#music">Muzyka</a></li>
                 <li class="menu-item"><a href="#shop">Sklep</a></li>
@@ -37,37 +41,197 @@
             </ul>
         </nav>
 
-        <section id="home" class="home">
-            <h1></h1>
+
+        <section id="news" class="news" ng-controller="NewsCtrl">
+            <h1> {{ news.title }} </h1>
+
+
+            <ul>
+                <li ng-repeat="n in news.lista" ng-show="n.widoczne">
+
+                    <div class="item-info" ng-if="n.typ == 'koncert'">
+                        <b> {{ n.title }} </b> <span class="badge badge-danger"> {{ n.d }} </span>
+                        <div> <a class="event-link" href="{{n.link}}"> LINK DO WYDARZENIA </a> </div>
+
+                        <ul>
+                            <li ng-repeat="img in n.img">
+                                <img ng-src="src/img/events/{{img}}" alt="Description" />
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="item-info" ng-if="n.typ == 'general'">
+                        <b> {{ n.title }} </b>
+                        <div ng-if="n.desc != ''">
+                            {{ n.desc }}
+                        </div>
+                        <div ng-if="n.link != ''">
+                            <a href="{{n.link}}">LINK</a>
+                        </div>
+
+                        <ul>
+                            <li ng-repeat="img in n.img">
+                                <img ng-src="src/img/events/{{img}}" alt="Description" />
+                            </li>
+                        </ul>
+
+                    </div>
+                </li>
+            </ul>
+
+
+        </section>
+        <section class="koncerty" id="koncerty" ng-controller="KoncertyCtrl">
+            <h1>{{ koncerty.title }}</h1>
+            <h3>{{koncerty.subTitle}}</h3>
+            <ul>
+                <li ng-repeat="k in koncerty.lista" ng-show="k.typ == 'koncert'">
+
+                    <div class="koncert-item">
+                        <b> {{ k.title }} </b> <span class="badge badge-danger"> {{ k.d }} </span>
+                    </div>
+                </li>
+            </ul>
+            <div><a href="koncerty.html">ARCHIWUM</a></div>
+        </section>
+
+
+        <section id="history" class="history" ng-controller="HistoriaCtrl">
+            <h1>{{historia.title}}</h1>
             <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum quo animi eius saepe cum sequi corporis doloremque, ipsum quasi quaerat maxime velit iusto magnam, nobis, molestiae dolor dolorem nam, non!
+                {{historia.historia}}
             </div>
 
         </section>
-        <section id="news" class="news">
-            <h1>Aktualności</h1>
-            <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos non error, animi voluptates sint tenetur iure explicabo veritatis nulla doloribus in, corrupti delectus fugit vel hic et maxime neque.
+
+
+        <section id="sklad" class="sklad container text-center">
+            <h1>Skład zespołu</h1>
+
+            <div class="row">
+
+                <div class="col-sm-3">
+                    <p class="text-center"><strong>Pepko</strong></p><br>
+                    <a href="#pepe" data-toggle="collapse">
+                <img src="src/img/sklad/pepe.jpg" class="img-circle person" alt="pepe" width="255" height="255">
+                </a>
+
+                </div>
+
+                <div class="col-sm-3">
+                    <p class="text-center"><strong>Dziadu</strong></p><br>
+                    <a href="#dziadu" data-toggle="collapse">
+                <img src="src/img/sklad/dziadu.JPG" class="img-circle person" alt="Dziadu" width="255" height="255">
+                </a>
+
+                </div>
+
+                <div class="col-sm-3">
+                    <p class="text-center"><strong>Harry</strong></p><br>
+                    <a href="#harry" data-toggle="collapse">
+                <img src="src/img/sklad/harry.JPG" class="img-circle person" alt="Harry" width="255" height="255">
+                </a>
+
+                </div>
+
+                <div class="col-sm-3">
+                    <p class="text-center"><strong>Forrest</strong></p><br>
+                    <a href="#forrest" data-toggle="collapse">
+                <img src="src/img/sklad/forrest.JPG" class="img-circle person" alt="Forrest" width="255" height="255">
+                </a>
+
+                </div>
             </div>
+
         </section>
-        <section class="koncerty" id="koncerty">
-            <h1>Koncerty</h1>
-            <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, recusandae eligendi, sunt alias reprehenderit unde officiis quas ratione sapiente assumenda ipsa voluptas, nemo facere et distinctio aut voluptates! Corporis, consequatur!
-            </div>
-        </section>
-        <section id="history" class="history">
-            <h1>Historia zespołu</h1>
-            <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iste sit quod possimus nulla nobis dolor, voluptatum ad ea dolorem saepe corporis sequi veniam voluptate incidunt, culpa rem esse ducimus.
-            </div>
-        </section>
+
+
+
         <section id="galery" class="galery">
             <h1>Galeria</h1>
             <div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, velit. Molestiae dolores explicabo eos, porro qui at culpa laudantium, facilis, adipisci quasi ea! Officiis excepturi unde sapiente explicabo odio, ullam?
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-action list-group-item-secondary">
+                        <a href="gnew3.html">OBECNIE</a>
+                    </li>
+                    <li class="list-group-item list-group-item-action list-group-item-secondary">
+                        <a href="gold3.html">DAWNO, DAWNO TEMU</a>
+                    </li>
+                </ul>
             </div>
         </section>
+
+
+
+        <section id="music" class="music" ng-controller="MuzykaCtrl">
+            <h1>Muzyka</h1>
+            <div>
+                <ul class="list-group">
+                    <li ng-repeat="track in music.lista" class="list-group-item list-group-item-dark">
+                        <a href="{{track.link}}">{{track.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+
+        <section id="shop" class="shop" ng-controller="SklepCtrl">
+            <h1>{{sklep.title}}</h1>
+            <ul>
+                <li ng-repeat="n in sklep.lista">
+
+                    <div class="item-info">
+                        <h3> {{ n.title }} </h3>
+                        <div ng-if="n.desc != ''">
+                            {{ n.desc }}
+                        </div>
+                        <div ng-if="n.link != ''">
+                            <a href="{{n.link}}">LINK</a>
+                        </div>
+
+                        <ul>
+                            <li ng-repeat="img in n.img">
+                                <img ng-src="src/img/sklep/{{img}}" alt="Description" />
+                            </li>
+                        </ul>
+
+
+
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+
+        <section id="contact" class="contact" ng-controller="ContactCtrl">
+            <h1>{{contact.title}}</h1>
+            <ul>
+                <li ng-repeat="c in contact.lista">
+
+                    <div class="item-info">
+                        <b> {{ c.title }} </b>
+                        <div ng-if="n.desc != ''">
+                            {{ c.desc }}
+                        </div>
+                        <div ng-if="n.link != ''">
+                            <a href="{{c.link}}">LINK</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+
+
+        <!-- ta sama logika jaka sie znajduje w cookies -->
+        <!--
+        <div id="black-bottom">
+            <div>
+            </div>
+        </div>
+        -->
 
 
         <div class="cookie-container" id="cookie-container">
@@ -101,6 +265,12 @@
     </div>
 
 
+    <script src="src/js/NEWS.js"></script>
+    <script src="src/js/SKLEP.js"></script>
+
+
+    <script src="src/js/angular.js"></script>
+    <script src="src/js/papp.js"></script>
 
 
 
