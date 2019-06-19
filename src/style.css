@@ -19,6 +19,19 @@ body {
 }
 
 
+
+.home {
+    max-width: 80vw;
+    min-height: 100vh;
+}
+
+.home h1 {
+    font-size: 7em;
+    max-width: 90vw;
+}
+
+
+
 #nm {
     font-size: 3em;
     display: inline-block;
@@ -27,6 +40,43 @@ body {
     top: 20px;
 
 }
+
+
+#cookie-container {
+    width: 80vw;
+    left: 10vw;
+
+}
+
+
+.down {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-animation: animate 2s linear infinite;
+    animation: animate 2s linear infinite;
+    color: white;
+    text-decoration: none;
+}
+
+
+@-webkit-keyframes animate {
+    0% {
+        top: 50%;
+    }
+
+}
+
+
+@keyframes animate {
+    0% {
+        top: 50%;
+    }
+}
+
+
 
 
 
@@ -220,6 +270,16 @@ nav {
     nav {
         visibility: hidden;
     }
+
+    .home h1 {
+        font-size: 2em;
+        width: 90vw;
+    }
+
+    .home h3 {
+        font-size: 1em;
+        width: 90vw;
+    }
 }
 
 
@@ -233,8 +293,13 @@ section {
     margin-right: 10px;
 }
 
+
+
+
+
 .news {
     z-index: 100;
+
 }
 
 .news .item-info {
@@ -243,6 +308,17 @@ section {
     border: 1px solid gray;
     padding: 10px;
     margin: 14px;
+}
+
+.news .item-info b,
+.news .item-info span {
+    font-size: 2em;
+
+}
+
+
+.news .item-info div {
+    font-size: 1.4em;
 }
 
 .news .item-info img {
@@ -256,10 +332,22 @@ section {
 
 .news ul {
     list-style: none;
+    padding: 0px;
+    margin: 0px;
 }
 
 .shop ul {
     list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.shop img {
+    max-width: 60vw;
+    border-radius: 2em;
+    padding: 2px;
+    -webkit-box-shadow: inset 10px -47px 116px 17px rgba(207, 39, 39, 1);
+    box-shadow: inset 10px -47px 116px 17px rgba(207, 39, 39, 1);
 }
 
 #nav-logo-name {
