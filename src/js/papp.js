@@ -14,7 +14,8 @@ ProsecutorApp.controller("HomeCtrl", function ($scope) {
 
 
     $scope.home = {};
-    $scope.home.logo = "logo-napis-no-bg-02.JPG";
+    $scope.home.title = "PROSECUTOR";
+    $scope.home.subTitle = "Oficjalna strona zespołu."
 
 });
 
