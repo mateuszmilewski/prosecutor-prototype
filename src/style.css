@@ -15,14 +15,16 @@ body {
     font-family: pfont, Roboto, sans-serif;
     background-color: #141414;
     color: white;
-    width: 90%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
 
 
 
 .home {
     max-width: 80vw;
-    min-height: 100vh;
+    min-height: 10px;
 }
 
 .home h1 {
@@ -61,10 +63,26 @@ body {
     text-decoration: none;
 }
 
+.div-for-front-img {
+    width: 100%;
+    right: 10%;
+
+}
+
+.div-for-front-img img {
+    width: 100%;
+    -webkit-box-shadow: 3px 3px 1px #ccc;
+    box-shadow: 3px 3px 1px #ccc;
+    border: none;
+}
 
 @-webkit-keyframes animate {
     0% {
-        top: 50%;
+        top: 80%;
+    }
+
+    100% {
+        top: 90%;
     }
 
 }
@@ -72,7 +90,11 @@ body {
 
 @keyframes animate {
     0% {
-        top: 50%;
+        top: 80%;
+    }
+
+    100% {
+        top: 90%;
     }
 }
 
@@ -271,6 +293,10 @@ nav {
         visibility: hidden;
     }
 
+    .nav-logo-name {
+        visibility: hidden;
+    }
+
     .home h1 {
         font-size: 2em;
         width: 90vw;
@@ -289,8 +315,10 @@ nav {
 section {
     background-color: #141414;
     padding-top: 170px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 90%;
+    padding: 4%;
 }
 
 
@@ -303,11 +331,10 @@ section {
 }
 
 .news .item-info {
-    padding: 2em;
+    padding: 1em;
     border-radius: 17px;
-    border: 1px solid gray;
-    padding: 10px;
-    margin: 14px;
+    padding: 2px;
+    margin: 2px;
 }
 
 .news .item-info b,
@@ -350,7 +377,7 @@ section {
     box-shadow: inset 10px -47px 116px 17px rgba(207, 39, 39, 1);
 }
 
-#nav-logo-name {
+.nav-logo-name {
     position: absolute;
     top: 8px;
     left: 8px;
