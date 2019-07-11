@@ -21,6 +21,13 @@ body {
 }
 
 
+body .wrapper {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+
 
 .home {
     max-width: 80vw;
@@ -53,7 +60,7 @@ body {
 
 .down {
     position: absolute;
-    top: 70%;
+    top: 90%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -74,15 +81,17 @@ body {
     -webkit-box-shadow: 3px 3px 1px #ccc;
     box-shadow: 3px 3px 1px #ccc;
     border: none;
+    padding: 0px;
+    margin: 0px;
 }
 
 @-webkit-keyframes animate {
     0% {
-        top: 80%;
+        top: 90%;
     }
 
     100% {
-        top: 90%;
+        top: 110%;
     }
 
 }
